@@ -1727,7 +1727,8 @@ if matchlink:
 
 tab1, tab2 = st.tabs(["Player Visual", "Match Momentum"])
 with tab1:
-        if selected_match and playername:
+        if selected_description != "-- Select a match --" and playername:
+
 
 
     # Check that totalxt exists, is not empty, and playername is defined before running the calculation
