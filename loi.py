@@ -103,15 +103,18 @@ schedule_df = schedule_df.sort_values(by="date", ascending=False)
 schedule_df['formatted_date'] = schedule_df['date'].dt.strftime('%d/%m/%y')
 schedule_df['display'] = schedule_df['formatted_date'] + ' - ' + schedule_df['Home_Team'] + ' v ' + schedule_df['Away_Team']
 
+# Create mapping dict
+match_dict = dict(zip(schedule_df['display'], schedule_df['id']))
+
+# Dropdown options
 options = ["-- Select a match --"] + schedule_df["display"].tolist()
 selected_description = st.selectbox("Select a Match", options=options)
 
-# Only assign matchlink if a valid match is selected
+# Retrieve match id safely
 if selected_description != "-- Select a match --":
-    matchlink = schedule_df[schedule_df["description"] == selected_description]["id"].values[0]
-    st.info(f"Analyzing match: {selected_description}")
-    # 👉 Your matchlink-dependent logic starts here
+    matchlink = match_dict[selected_description]
 else:
+    matchlink = None
     st.warning("Please select a match to begin.")
 
 if matchlink:
