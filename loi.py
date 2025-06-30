@@ -2032,15 +2032,15 @@ with tab2:
         
             # Create plot
         fig, ax = plt.subplots(figsize=(10,6))
-        ax.set_facecolor('#f5f6fc')
+        ax.set_facecolor('white')
         x = pivot_df['timeMin']
         y = pivot_df['rolling_avg_score_difference']
         spl = make_interp_spline(x, y, k=3)
         x_smooth = np.linspace(x.min(), x.max(), 300)
         y_smooth = spl(x_smooth)
         
-        ax.fill_between(x_smooth, y_smooth, where=(y_smooth >= 0), interpolate=True, color='red', alpha=0.45, edgecolor='white')
-        ax.fill_between(x_smooth, y_smooth, where=(y_smooth < 0), interpolate=True, color='blue', alpha=0.45, edgecolor='white')
+        ax.fill_between(x_smooth, y_smooth, where=(y_smooth >= 0), interpolate=True, color='#169b62', alpha=0.45, edgecolor='#169b62')
+        ax.fill_between(x_smooth, y_smooth, where=(y_smooth < 0), interpolate=True, color='#ff883e', alpha=0.45, edgecolor='#ff883e')
                   # Add football icons for goals
         for goal_min in goal_time:
             closest_idx = (pivot_df['timeMin'] - goal_min).abs().idxmin()
@@ -2051,9 +2051,9 @@ with tab2:
             ax.add_artist(ab_goal)
                  # Halftime and fulltime lines
         if pd.notna(halftime):
-            ax.axvline(x=halftime, color='green', linestyle='--', linewidth=1)
+            ax.axvline(x=halftime, color='blue', linestyle='--', linewidth=1)
         if pd.notna(fulltime) and fulltime >= 90:
-            ax.axvline(x=fulltime, color='green', linestyle='--', linewidth=1)
+            ax.axvline(x=fulltime, color='blue', linestyle='--', linewidth=1)
 
         
         ax.set_title(f'{teamname} v {opponentname} Match Momentum')
