@@ -1707,7 +1707,7 @@ if matchlink:
 
         starting_lineups = starting_lineups.drop_duplicates(subset=['player_id', 'match_id'], keep='first')
 
-        league = 'INT-FIFACWC'
+        league = 'IRE-LOI'
         league_colors = {
             "ENG-FACup": {
                 "TextColor": "white",
@@ -1718,176 +1718,14 @@ if matchlink:
                 "SonarCarry": "darkblue",
                 "HullColor": "red"
             },
-            "INT-FIFACWC": {
+            "IRE-LOI": {
                 "TextColor": "white",
-                "BackgroundColor": "black",
-                "PitchColor": "#e5e6b1",
+                "BackgroundColor": "#191919",
+                "PitchColor": "#79fe00",
                 "PitchLineColor": "white",
-                "SonarPass": "red",
-                "SonarCarry": "yellow",
-                "HullColor": "black"
-            },
-            "ENG-LeagueCup": {
-                "TextColor": "black",
-                "BackgroundColor": "#ffd5cc",
-                "PitchColor": "#c4f0e1",
-                "PitchLineColor": "black",
-                "SonarPass": "#c4f0e1",
-                "SonarCarry": "#178fce",
-                "HullColor": "#ffd5cc"
-            },
-            "ENG-Premier League": {
-                "TextColor": "white",
-                "BackgroundColor": "#381d54",
-                "PitchColor": "#f5f6fc",
-                "PitchLineColor": "black",
-                "SonarPass": "#f5f6fc",
-                "SonarCarry": "yellow",
-                "HullColor": "#381d54"
-            },
-            "EUR-UEFAEuros": {
-                "TextColor": "white",
-                "BackgroundColor": "#973d52",
-                "PitchColor": "#e2e2e3",
-                "PitchLineColor": "black",
-                "SonarPass": "#e2e2e3",
-                "SonarCarry": "#f3da15",
-                "HullColor": "#ebf3fc"
-            },
-            "ENG-LeagueOne": {
-                "TextColor": "black",
-                "BackgroundColor": "#ede6cf",
-                "PitchColor": "#d4d6e3",
-                "PitchLineColor": "black",
-                "SonarPass": "#d4d6e3",
-                "SonarCarry": "red",
-                "HullColor": "#ede6cf"
-            },
-            "ENG-Championship": {
-                "TextColor": "black",
-                "BackgroundColor": "#ede6cf",
-                "PitchColor": "#d4d6e3",
-                "PitchLineColor": "black",
-                "SonarPass": "#d4d6e3",
-                "SonarCarry": "red",
-                "HullColor": "#ede6cf"
-            },
-            "ITA-Serie A": {
-                "TextColor": "",
-                "BackgroundColor": "",
-                "PitchColor": "",
-                "PitchLineColor": "",
-                "SonarPass": "",
-                "SonarCarry": "",
-                "HullColor": "#ebf3fc"
-            },
-            "ENG-LeagueTwo": {
-                "TextColor": "black",
-                "BackgroundColor": "#ede6cf",
-                "PitchColor": "#d4d6e3",
-                "PitchLineColor": "black",
-                "SonarPass": "#d4d6e3",
-                "SonarCarry": "red",
-                "HullColor": "#ede6cf"
-            },
-            "SCO-Premiership": {
-                "TextColor": "white",
-                "BackgroundColor": "#212b5a",
-                "PitchColor": "#f1e5bd",
-                "PitchLineColor": "black",
-                "SonarPass": "#f1e5bd",
-                "SonarCarry": "pink",
-                "HullColor": "#212b5a"
-            },
-            "USA-MLS": {
-                "TextColor": "white",
-                "BackgroundColor": "#d92419",
-                "PitchColor": "#68a7c8",
-                "PitchLineColor": "black",
-                "SonarPass": "#68a7c8",
-                "SonarCarry": "white",
-                "HullColor": "#d92419"
-            },
-            "EUR-UCL": {
-                "TextColor": "white",
-                "BackgroundColor": "#00106f",
-                "PitchColor": "#62c6dd",
-                "PitchLineColor": "black",
-                "SonarPass": "#62c6dd",
-                "SonarCarry": "yellow",
-                "HullColor": "#00106f"
-            },
-            "EUR-EUL": {
-                "TextColor": "black",
-                "BackgroundColor": "#da9240",
-                "PitchColor": "#b9b9bb",
-                "PitchLineColor": "black",
-                "SonarPass": "#b9b9bb",
-                "SonarCarry": "blue",
-                "HullColor": "#da9240"
-            },
-            "ENG-WSL": {
-                "TextColor": "",
-                "BackgroundColor": "",
-                "PitchColor": "",
-                "PitchLineColor": "",
-                "SonarPass": "",
-                "SonarCarry": "",
-                "HullColor": "#ebf3fc"
-            },
-            "ESP-La Liga": {
-                "TextColor": "#ff4b44",
-                "BackgroundColor": "white",
-                "PitchColor": "white",
-                "PitchLineColor": "#ff4b44",
-                "SonarPass": "#ff4b44",
-                "SonarCarry": "#178fce",
-                "HullColor": "blue"
-            },
-            "GER-Bundesliga": {
-                "TextColor": "white",
-                "BackgroundColor": "#d10214",
-                "PitchColor": "white",
-                "PitchLineColor": "black",
-                "SonarPass": "white",
-                "SonarCarry": "yellow",
-                "HullColor": "#d10214"
-            },
-            "GER-BundesligaTwo": {
-                "TextColor": "white",
-                "BackgroundColor": "#d10214",
-                "PitchColor": "white",
-                "PitchLineColor": "black",
-                "SonarPass": "white",
-                "SonarCarry": "yellow",
-                "HullColor": "#d10214"
-            },
-            "FRA-Ligue 1": {
-                "TextColor": "white",
-                "BackgroundColor": "#091c3d",
-                "PitchColor": "#E7F5AC",
-                "PitchLineColor": "black",
-                "SonarPass": "#E7F5AC",
-                "SonarCarry": "red",
-                "HullColor": "#091c3d"
-            },
-            "BEL-ProLeague": {
-                "TextColor": "",
-                "BackgroundColor": "",
-                "PitchColor": "",
-                "PitchLineColor": "",
-                "SonarPass": "",
-                "SonarCarry": "",
-                "HullColor": "#ebf3fc"
-            },
-            "POR-LigaPortugal": {
-                "TextColor": "white",
-                "BackgroundColor": "#001e50",
-                "PitchColor": "#f5f6fc",
-                "PitchLineColor": "black",
-                "SonarPass": "#f5f6fc",
-                "SonarCarry": "yellow",
-                "HullColor": "#001e50"
+                "SonarPass": "green",
+                "SonarCarry": "orange",
+                "HullColor": "#191919"
             },
             "TUR-SuperLig": {
                 "TextColor": "",
