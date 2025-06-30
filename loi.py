@@ -1736,10 +1736,11 @@ with tab1:
         else:
             player_impact = None
             match_rank = None
+        
+        player_impact_value = player_impact
+        match_rank_value = match_rank
 
-        # Display the result
-        player_impact_value = player_impact.iloc[0] if not player_impact.empty else None
-        match_rank_value = match_rank.iloc[0] if not match_rank.empty else None
+        #match_rank_value = match_rank.iloc[0] if not match_rank.empty else None
         anderson = df.loc[df['playerName']== playername]
         anderson = anderson.loc[anderson['typeId']!='Out']
         anderson = anderson.loc[anderson['typeId']!='Player off']
