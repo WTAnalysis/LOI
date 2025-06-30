@@ -24,7 +24,7 @@ from PIL import Image
 
 wtaimaged = Image.open("wtatransnew.png")
 st.set_page_config(page_title="WT Analysis - Club World Cup", layout="wide")
-st.title("WT Analysis - Club World Cup Visuals")
+st.title("WT Analysis - LOI Visuals")
 
 # Inputs
 import pandas as pd
@@ -38,7 +38,7 @@ import json
 import re
 import pandas as pd
 
-dataafterleague = '7n3ltxz65zjcd8z9eyr5i2wb8'
+dataafterleague = '3zoeegue4xtul58c8ksahcjdg'
 headers = {
     'Referer': 'https://www.scoresway.com/',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
