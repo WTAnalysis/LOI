@@ -23,6 +23,8 @@ import matplotlib.patches as patches
 from PIL import Image
 
 wtaimaged = Image.open("wtatransnew.png")
+leagueimage = Image.open("loilogo.png")
+
 st.set_page_config(page_title="WT Analysis - Club World Cup", layout="wide")
 st.title("WT Analysis - LOI Visuals")
 
