@@ -1823,6 +1823,7 @@ with tab1:
         import numpy as np
         from scipy.stats import gaussian_kde
         from scipy.spatial import ConvexHull
+        from matplotlib.lines import Line2D
 
         # Create a figure with three subplots side by side
         fig, axes = plt.subplots(1, 3, figsize=(24, 8.25), facecolor=BackgroundColor)  # Adjust the figsize as needed
