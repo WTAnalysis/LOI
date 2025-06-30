@@ -2003,7 +2003,7 @@ with tab1:
                                  alpha=1, interpolation='hanning')
             dpi = 600
             st.pyplot(fig)
-    else:
+else:
         st.write("Please select a match and player to view analysis.")
 with tab2:
         import matplotlib.pyplot as plt
