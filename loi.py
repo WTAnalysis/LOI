@@ -1729,7 +1729,11 @@ tab1, tab2 = st.tabs(["Player Visual", "Match Momentum"])
 with tab1:
 
 
-        player_impact = totalxt.loc[totalxt['playerName'] == playername, 'Player Impact']
+# Check that totalxt exists, is not empty, and playername is defined before running the calculation
+        if 'totalxt' in locals() and not totalxt.empty and 'playername' in locals() and playername in totalxt['playerName'].values:
+            player_impact = totalxt.loc[totalxt['playerName'] == playername, 'Player Impact']
+        else:
+            player_impact = None
         match_rank = totalxt.loc[totalxt['playerName'] == playername, 'Match Rank']
 
         # Display the result
