@@ -95,7 +95,7 @@ schedule_df['date'] = pd.to_datetime(schedule_df['date'].str.replace('Z', '', re
 schedule_df = schedule_df.dropna(subset=["description"])
 # Filter to past matches only and sort ascending
 today = pd.to_datetime(datetime.today().date())
-ten_days_ago = today - pd.Timedelta(days=9)  # Previous 9 + today = 10 days total
+ten_days_ago = today - pd.Timedelta(days=14)  # Previous 9 + today = 10 days total
 schedule_df = schedule_df[(schedule_df["date"] >= ten_days_ago) & (schedule_df["date"] <= today)]
 schedule_df = schedule_df.sort_values(by="date", ascending=False)
 
