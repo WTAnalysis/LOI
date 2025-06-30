@@ -1817,8 +1817,7 @@ if matchlink:
 
         })
         
-        tab1, tab2 = st.tabs(["Player Visual", "Match Momentum"])
-        
+      
         
 
         # Output the result
