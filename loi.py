@@ -1731,10 +1731,11 @@ with tab1:
 
 # Check that totalxt exists, is not empty, and playername is defined before running the calculation
         if 'totalxt' in locals() and not totalxt.empty and 'playername' in locals() and playername in totalxt['playerName'].values:
-            player_impact = totalxt.loc[totalxt['playerName'] == playername, 'Player Impact']
+            player_impact = totalxt.loc[totalxt['playerName'] == playername, 'Player Impact'].values[0]
+            match_rank = totalxt.loc[totalxt['playerName'] == playername, 'Match Rank'].values[0]
         else:
             player_impact = None
-        match_rank = totalxt.loc[totalxt['playerName'] == playername, 'Match Rank']
+            match_rank = None
 
         # Display the result
         player_impact_value = player_impact.iloc[0] if not player_impact.empty else None
