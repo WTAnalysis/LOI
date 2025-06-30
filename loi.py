@@ -97,7 +97,7 @@ schedule_df = schedule_df.dropna(subset=["description"])
 today = pd.to_datetime(datetime.today().date())
 ten_days_ago = today - pd.Timedelta(days=9)  # Previous 9 + today = 10 days total
 schedule_df = schedule_df[(schedule_df["date"] >= ten_days_ago) & (schedule_df["date"] <= today)]
-schedule_df = schedule_df.sort_values(by="date")
+schedule_df = schedule_df.sort_values(by="date", ascending=False)
 
 # Create dropdown options (with empty default)
 schedule_df['formatted_date'] = schedule_df['date'].dt.strftime('%d/%m/%y')
