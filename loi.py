@@ -25,7 +25,7 @@ from PIL import Image
 wtaimaged = Image.open("wtatransnew.png")
 leagueimage = Image.open("loilogo.png")
 
-st.set_page_config(page_title="WT Analysis - Club World Cup", layout="wide")
+st.set_page_config(page_title="WT Analysis - League of Ireland", layout="wide")
 st.title("WT Analysis - LOI Visuals")
 
 # Inputs
@@ -95,7 +95,8 @@ schedule_df['date'] = pd.to_datetime(schedule_df['date'].str.replace('Z', '', re
 schedule_df = schedule_df.dropna(subset=["description"])
 # Filter to past matches only and sort ascending
 today = pd.to_datetime(datetime.today().date())
-schedule_df = schedule_df[schedule_df["date"] <= today]
+ten_days_ago = today - pd.Timedelta(days=9)  # Previous 9 + today = 10 days total
+schedule_df = schedule_df[(schedule_df["date"] >= ten_days_ago) & (schedule_df["date"] <= today)]
 schedule_df = schedule_df.sort_values(by="date")
 
 # Create dropdown options (with empty default)
