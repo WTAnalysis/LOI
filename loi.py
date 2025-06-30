@@ -1710,118 +1710,13 @@ if matchlink:
 
         starting_lineups = starting_lineups.drop_duplicates(subset=['player_id', 'match_id'], keep='first')
 
-        league = 'IRE-LOI'
-        league_colors = {
-            "ENG-FACup": {
-                "TextColor": "white",
-                "BackgroundColor": "red",
-                "PitchColor": "#e5e1e0",
-                "PitchLineColor": "black",
-                "SonarPass": "#e5e1e0",
-                "SonarCarry": "darkblue",
-                "HullColor": "red"
-            },
-            "IRE-LOI": {
-                "TextColor": "white",
-                "BackgroundColor": "#191919",
-                "PitchColor": "#79fe00",
-                "PitchLineColor": "white",
-                "SonarPass": "green",
-                "SonarCarry": "orange",
-                "HullColor": "#191919"
-            },
-            "TUR-SuperLig": {
-                "TextColor": "",
-                "BackgroundColor": "",
-                "PitchColor": "",
-                "PitchLineColor": "",
-                "SonarPass": "",
-                "SonarCarry": "",
-                "HullColor": "#ebf3fc"
-            },
-            "NFFC": {
-                "TextColor": "black",
-                "BackgroundColor": "#f5f2f3",
-                "PitchColor": "#ffe3e9",
-                "PitchLineColor": "black",
-                "SonarPass": "red",
-                "SonarCarry": "#87cbfc",
-                "HullColor": "#ebf3fc"
-            },
-            "INT-NationsLeagueA": {
-                "TextColor": "black",
-                "BackgroundColor": "#ebf3fc",
-                "PitchColor": "#c9def9",
-                "PitchLineColor": "black",
-                "SonarPass": "red",
-                "SonarCarry": "yellow",
-                "HullColor": "#ebf3fc"
-            },
-            "INT-NationsLeagueB": {
-                "TextColor": "black",
-                "BackgroundColor": "#ebf3fc",
-                "PitchColor": "#c9def9",
-                "PitchLineColor": "black",
-                "SonarPass": "red",
-                "SonarCarry": "yellow",
-                "HullColor": "#ebf3fc"
-            },
-            "INT-NationsLeagueC": {
-                "TextColor": "black",
-                "BackgroundColor": "#ebf3fc",
-                "PitchColor": "#c9def9",
-                "PitchLineColor": "black",
-                "SonarPass": "red",
-                "SonarCarry": "yellow",
-                "HullColor": "#ebf3fc"
-            },
-            "INT-FIFAWCQ": {
-                "TextColor": "white",
-                "BackgroundColor": "#a8161c",
-                "PitchColor": "#cecccd",
-                "PitchLineColor": "black",
-                "SonarPass": "#cecccd",
-                "SonarCarry": "#f8ca0f",
-                "HullColor": "#a8161c"
-            },
-            "INT-NationsLeagueD": {
-                "TextColor": "black",
-                "BackgroundColor": "#ebf3fc",
-                "PitchColor": "#c9def9",
-                "PitchLineColor": "black",
-                "SonarPass": "red",
-                "SonarCarry": "yellow",
-                "HullColor": "#ebf3fc"
-            },
-            "INT-NationsLeagueAQ": {
-                "TextColor": "black",
-                "BackgroundColor": "#ebf3fc",
-                "PitchColor": "#c9def9",
-                "PitchLineColor": "black",
-                "SonarPass": "red",
-                "SonarCarry": "yellow",
-                "HullColor": "#ebf3fc"
-            }
-        }
-
-        # Define the league you are working with
-        # Retrieve the color properties for the specified league
-        league_colors_properties = league_colors.get(league, {
-            "TextColor": "default",
-            "BackgroundColor": "default",
-            "PitchColor": "default",
-            "PitchLineColor": "default",
-            "SonarPass": "default",
-            "SonarCarry": "default",
-            "HullColor": "default"
-
-        })
-        
-      
-        
-
-        # Output the result
-        print(f"Color properties for {league}: {league_colors_properties}")
+        TextColor = "white"
+        BackgroundColor = "#191919"
+        PitchColor = "#79fe00"
+        PitchLineColor = "white"
+        SonarPass = "green"
+        SonarCarry = "orange"
+        HullColor = "#191919"
         player_list = starting_lineups["player_name"].dropna().unique().tolist()
 
         player_options = ["-- Select a player --"] + sorted(player_list)
