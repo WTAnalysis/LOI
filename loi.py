@@ -100,7 +100,10 @@ schedule_df = schedule_df[(schedule_df["date"] >= ten_days_ago) & (schedule_df["
 schedule_df = schedule_df.sort_values(by="date")
 
 # Create dropdown options (with empty default)
-options = ["-- Select a match --"] + schedule_df["description"].tolist()
+schedule_df['formatted_date'] = schedule_df['date'].dt.strftime('%d/%m/%y')
+schedule_df['display'] = schedule_df['formatted_date'] + ' - ' + schedule_df['Home_Team'] + ' v ' + schedule_df['Away_Team']
+
+options = ["-- Select a match --"] + schedule_df["display"].tolist()
 selected_description = st.selectbox("Select a Match", options=options)
 
 # Only assign matchlink if a valid match is selected
